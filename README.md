@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://dl.isxander.dev/logos/shotify/v1/shotify-512x.png" style="width: 128px;height: auto;border-radius: 15px"/>
+<img src="https://dl.isxander.dev/logos/shotify/v1/shotify-text-512x.png" style="width: 256px;height: auto;border-radius: 15px"/>
 
-# Shotify
+
 _A highly advanced screenshot mod._
 
 [Modrinth](https://modrinth.com/mod/shotify) • [Curseforge](https://www.curseforge.com/minecraft/mc-mods/shotify)

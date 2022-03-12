@@ -1,28 +1,24 @@
-# Xander's Fabric Template for Kotlin
-The best Fabric template using kotlin.
+<div align="center">
 
-## Usage
-**Mod Development**:
-* Please read the [Fabric Wiki](https://fabricmc.net/wiki) for general mod development help.
+<img src="https://dl.isxander.dev/logos/shotify/v1/shotify-512x.png" style="width: 128px;height: auto;border-radius: 15px"/>
 
-**Using the template**
-* Click the big green `Use this template` button to clone the template to your GitHub.
-* Replace relevant information in the files
-    * `build.gradle.kts`
-        * `group`
-        * `version`
-    * `src/main/resources/fabric.mod.json`
-        * basically everything in there
-    * `LICENSE`
-        * I recommend you use the [LGPL 2.1](https://www.gnu.org/licenses/lgpl-2.1.html) license
-    * `README.md`
-        * Can't forget this! It's what your reading now!
-* Once set up in your IDE of choice, you will probably want to run your mod. Here are a few options
-    * You can use `gradlew run` to run from the command line.
-    * You can create a run configuration in your IDE with the gradle commands `run`.
-    * Use the automatically populated run configuration that fabric-loom generated for you. (sometimes this doesn't work)
-    * Run in a production environment by building a jar with `gradlew build`.
+# Shotify
+_A highly advanced screenshot mod._
 
-## License
-* This template is licensed under [The Unlicense](https://unlicense.org/) in an attempt to gift this project to the public domain.
-  (you can use this however you want)
+[Modrinth](https://modrinth.com/mod/shotify) • [Curseforge](https://www.curseforge.com/minecraft/mc-mods/shotify)
+
+![preview showcase](https://i.imgur.com/AQPouDL.gif)
+
+Shotify aims to improve a largely forgotten about feature of the game: screenshots.
+
+### Taking a screenshot in vanilla Minecraft
+Every time I take a screenshot, I then need to either navigate to the screenshot folder myself,
+then copy it to my clipboard and send it where-ever I want. But sometimes, you can't even
+embed the image in the chat, because it's too big, so you have to upload it to a image hosting
+service.
+
+### Taking a screenshot using Shotify
+I use a keybind to take a screenshot, I get a preview of the screenshot, and I can
+paste the automatically generated link to my chat. I can even share it to twitter!
+
+</div>

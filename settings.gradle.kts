@@ -3,7 +3,8 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
         maven("https://maven.fabricmc.net")
+        maven("https://server.bbkr.space/artifactory/libs-release/")
     }
 }
 
-rootProject.name = "FabricKotlinTemplate"
+rootProject.name = "Shotify"

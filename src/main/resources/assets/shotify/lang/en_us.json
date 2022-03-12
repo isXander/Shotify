@@ -1,0 +1,18 @@
+{
+  "shotify.text.content": "Screenshot Taken!",
+  "shotify.text.open_folder": "Open Folder",
+  "shotify.text.open_image": "Open Image",
+  "shotify.text.copy_url": "Copy Link",
+  "shotify.text.share_twitter": "Share on Twitter",
+
+  "shotify.share.twitter.content": "Look at this screenshot I took on Minecraft!",
+
+  "shotify.config.title": "Shotify",
+  "shotify.config.category.upload": "Uploading",
+  "shotify.config.upload_imgur.name": "Upload To Imgur",
+  "shotify.config.upload_imgur.description": "Uploads the screenshot to Imgur.",
+  "shotify.config.copy_upload_clipboard.name": "Copy URL to Clipboard",
+  "shotify.config.copy_upload_clipboard.description": "Copies the URL to the clipboard.",
+
+  "shotify.update.available": "A Shotify update is available: "
+}

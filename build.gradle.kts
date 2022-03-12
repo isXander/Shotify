@@ -3,15 +3,26 @@ plugins {
 
     java
     kotlin("jvm") version kotlinVersion
+    kotlin("plugin.serialization") version kotlinVersion
+
     id("fabric-loom") version "0.11.+"
+    id("io.github.juuxel.loom-quiltflower") version "1.+"
+
+    id("com.github.johnrengelman.shadow") version "7.+"
 }
 
-group = "com.example"
-version = "1.0"
+group = "dev.isxander"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
+    maven("https://repo.sk1er.club/repository/maven-public")
+    maven("https://repo.woverflow.cc")
+    maven("https://maven.terraformersmc.com")
+    maven("https://jitpack.io")
 }
+
+val shade by configurations.creating
 
 dependencies {
     val kotlinVersion: String by System.getProperties()
@@ -28,6 +39,15 @@ dependencies {
     modImplementation("net.fabricmc:fabric-loader:$loaderVersion")
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion+kotlin.$kotlinVersion")
+
+    shade(modImplementation("gg.essential:elementa-1.18-fabric:+")!!)
+
+    include(implementation("dev.isxander:settxi:2.1.0")!!)
+    include(modImplementation("dev.isxander:settxi-cloth-impl:1.+")!!)
+
+    include(implementation("org.bundleproject:libversion:0.0.+")!!)
+
+    modImplementation("com.terraformersmc:modmenu:3.+")
 }
 
 kotlin {
@@ -37,6 +57,25 @@ kotlin {
 }
 
 tasks {
+    jar {
+        archiveClassifier.set("dev")
+    }
+
+    shadowJar {
+        archiveClassifier.set("dev-shadow")
+
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        configurations = listOf(shade)
+
+        relocate("gg.essential.elementa", "dev.isxander.lib.elementa")
+        relocate("gg.essential.universalcraft", "dev.isxander.lib.universalcraft")
+    }
+
+    remapJar {
+        dependsOn("shadowJar")
+        inputFile.set(shadowJar.get().archiveFile)
+    }
+
     processResources {
         inputs.property("version", project.version)
         filesMatching("fabric.mod.json") {

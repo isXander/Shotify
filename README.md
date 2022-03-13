@@ -6,10 +6,10 @@ _A highly advanced screenshot mod._
 
 [Modrinth](https://modrinth.com/mod/shotify) • [Curseforge](https://www.curseforge.com/minecraft/mc-mods/shotify)
 
-[<img src="https://i.imgur.com/Ol1Tcf8.png" style="width:200px;">](https://modrinth.com/mod/fabric-api)
-[<img src="https://i.imgur.com/c1DH9VL.png" style="width:200px;">](https://modrinth.com/mod/fabric-language-kotlin)
-[<img src="https://raw.githubusercontent.com/Jab125/Jab125/main/imgs/requiredClothConfig.png" style="width:200px;">](https://curseforge.com/minecraft/mc-mods/cloth-config)
-[<img src="https://dl.isxander.dev/badges/suggests-mod-menu.png" style="width:200px;">](https://modrinth.com/mod/modmenu)
+[<img src="https://i.imgur.com/Ol1Tcf8.png" style="height:62px;">](https://modrinth.com/mod/fabric-api)
+[<img src="https://i.imgur.com/c1DH9VL.png" style="height:62px;">](https://modrinth.com/mod/fabric-language-kotlin)
+[<img src="https://raw.githubusercontent.com/Jab125/Jab125/main/imgs/requiredClothConfig.png" style="height:62px;">](https://curseforge.com/minecraft/mc-mods/cloth-config)
+[<img src="https://dl.isxander.dev/badges/suggests-mod-menu.png" style="height:62px;">](https://modrinth.com/mod/modmenu)
 
 ![preview showcase](https://i.imgur.com/AQPouDL.gif)
 

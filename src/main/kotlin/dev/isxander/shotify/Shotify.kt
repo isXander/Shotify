@@ -4,7 +4,7 @@ import dev.isxander.shotify.api.metrics.UniqueUsersMetric
 import dev.isxander.shotify.api.updater.ShotifyUpdateChecker
 import dev.isxander.shotify.config.ShotifyConfig
 import dev.isxander.shotify.share.TwitterShareTask
-import dev.isxander.shotify.ui.notification.ScreenshotPreview
+import dev.isxander.shotify.ui.preview.ScreenshotPreview
 import dev.isxander.shotify.upload.ImgurUploadTask
 import dev.isxander.shotify.util.Screenshot
 import dev.isxander.shotify.util.logger

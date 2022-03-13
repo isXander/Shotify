@@ -1,6 +1,7 @@
-package dev.isxander.shotify.ui.notification
+package dev.isxander.shotify.ui.preview
 
 import dev.isxander.shotify.Shotify
+import dev.isxander.shotify.config.ShotifyConfig
 import dev.isxander.shotify.util.Screenshot
 import dev.isxander.shotify.util.ofNativeImage
 import gg.essential.elementa.components.UIBlock
@@ -47,14 +48,39 @@ class ScreenshotComponent(val screenshot: Screenshot) : UIContainer() {
 
     private fun collapseAnimation() {
         animate {
-            setXAnimation(Animations.IN_OUT_SIN, 0.5f, 68.percent())
-            setYAnimation(Animations.IN_OUT_SIN, 0.5f, 0.pixels(alignOpposite = true) - basicYConstraint { 2.percent().getXPositionImpl(it) })
-            setWidthAnimation(Animations.IN_OUT_SIN, 0.5f, 30.percent())
-            setHeightAnimation(Animations.IN_OUT_SIN, 0.5f, ChildBasedMaxSizeConstraint())
+            val animation = Animations.IN_OUT_SIN
+            val time = 0.5f
+
+            when (ShotifyConfig.previewDirection) {
+                ShotifyConfig.PreviewDirection.TopLeft -> {
+                    setXAnimation(animation, time, 2.percent())
+                    setYAnimation(animation, time, basicYConstraint { 2.percent().getXPositionImpl(it) })
+                }
+                ShotifyConfig.PreviewDirection.TopRight -> {
+                    setXAnimation(animation, time, 68.percent())
+                    setYAnimation(animation, time, basicYConstraint { 2.percent().getXPositionImpl(it) })
+                }
+                ShotifyConfig.PreviewDirection.BottomLeft -> {
+                    setXAnimation(animation, time, 2.percent())
+                    setYAnimation(animation, time, 0.pixels(alignOpposite = true) - basicYConstraint { 2.percent().getXPositionImpl(it) })
+                }
+                ShotifyConfig.PreviewDirection.BottomRight -> {
+                    setXAnimation(animation, time, 68.percent())
+                    setYAnimation(animation, time, 0.pixels(alignOpposite = true) - basicYConstraint { 2.percent().getXPositionImpl(it) })
+                }
+            }
+
+            setWidthAnimation(animation, time, 30.percent())
+            setHeightAnimation(animation, time, ChildBasedMaxSizeConstraint())
 
             onComplete {
                 animate {
-                    setXAnimation(Animations.OUT_SIN, 0.5f, 100.percent(), 5f).onComplete {
+                    val x = if (ShotifyConfig.previewDirection == ShotifyConfig.PreviewDirection.TopLeft || ShotifyConfig.previewDirection == ShotifyConfig.PreviewDirection.BottomLeft) {
+                        (-30).percent()
+                    } else {
+                        100.percent()
+                    }
+                    setXAnimation(Animations.OUT_SIN, 0.5f, x, ShotifyConfig.previewTime.toFloat()).onComplete {
                         if (Shotify.currentScreenshot == screenshot) {
                             Shotify.currentScreenshot = null
                         }

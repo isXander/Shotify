@@ -1,5 +1,6 @@
-package dev.isxander.shotify.ui.notification
+package dev.isxander.shotify.ui.preview
 
+import dev.isxander.shotify.config.ShotifyConfig
 import dev.isxander.shotify.util.Screenshot
 import gg.essential.elementa.ElementaVersion
 import gg.essential.elementa.components.Window
@@ -18,6 +19,9 @@ object ScreenshotPreview {
     }
 
     fun init() {
-        HudRenderCallback.EVENT.register { matrices, _ -> window.draw(UMatrixStack(matrices)) }
+        HudRenderCallback.EVENT.register { matrices, _ ->
+            if (ShotifyConfig.renderPreview)
+                window.draw(UMatrixStack(matrices))
+        }
     }
 }

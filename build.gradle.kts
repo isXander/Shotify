@@ -12,7 +12,7 @@ plugins {
 }
 
 group = "dev.isxander"
-version = "1.0.0"
+version = "1.1.0"
 
 repositories {
     mavenCentral()
@@ -50,7 +50,7 @@ dependencies {
         exclude(module = "fabric-loader")
     })
 
-    include(implementation("dev.isxander:settxi:2.1.0")!!)
+    include(implementation("dev.isxander:settxi:2.1.1")!!)
     include(modImplementation("dev.isxander:settxi-cloth-impl:1.+")!!)
 
     include(implementation("org.bundleproject:libversion:0.0.+")!!)
@@ -92,6 +92,12 @@ tasks {
                     "version" to project.version
                 )
             )
+        }
+    }
+
+    compileKotlin {
+        kotlinOptions {
+            freeCompilerArgs += "-Xjvm-default=enable"
         }
     }
 }

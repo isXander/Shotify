@@ -18,6 +18,10 @@ object ScreenshotPreview {
         screenshotComponent.startAnimation()
     }
 
+    fun clear() {
+        window.children.clear()
+    }
+
     fun init() {
         HudRenderCallback.EVENT.register { matrices, _ ->
             if (ShotifyConfig.renderPreview)

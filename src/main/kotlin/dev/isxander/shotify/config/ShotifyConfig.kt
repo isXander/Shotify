@@ -6,6 +6,8 @@ import dev.isxander.settxi.impl.OptionContainer
 import dev.isxander.settxi.impl.boolean
 import dev.isxander.settxi.impl.int
 import dev.isxander.settxi.impl.option
+import dev.isxander.shotify.Shotify
+import dev.isxander.shotify.ui.preview.ScreenshotPreview
 import net.minecraft.text.TranslatableText
 import java.io.File
 
@@ -17,6 +19,14 @@ object ShotifyConfig : SettxiGuiWrapper(TranslatableText("shotify.config.title")
         name = "shotify.config.render_preview.name"
         category = RENDERING_CATEGORY
         description = "shotify.config.render_preview.description"
+
+        set {
+            if (!it) {
+                ScreenshotPreview.clear()
+                Shotify.currentScreenshot = null
+            }
+            it
+        }
     }
 
     var previewDirection by option(PreviewDirection.BottomRight) {

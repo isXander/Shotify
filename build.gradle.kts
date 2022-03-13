@@ -40,7 +40,15 @@ dependencies {
     modImplementation("net.fabricmc.fabric-api:fabric-api:$fabricVersion")
     modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion+kotlin.$kotlinVersion")
 
-    shade(modImplementation("gg.essential:elementa-1.18-fabric:+")!!)
+    shade(modImplementation("gg.essential:elementa-1.18-fabric:+") {
+        exclude(module = "kotlin-stdlib")
+        exclude(module = "kotlin-stdlib-common")
+        exclude(module = "kotlin-stdlib-jdk8")
+        exclude(module = "kotlin-stdlib-jdk7")
+        exclude(module = "kotlin-reflect")
+        exclude(module = "annotations")
+        exclude(module = "fabric-loader")
+    })
 
     include(implementation("dev.isxander:settxi:2.1.0")!!)
     include(modImplementation("dev.isxander:settxi-cloth-impl:1.+")!!)
@@ -68,7 +76,7 @@ tasks {
         configurations = listOf(shade)
 
         relocate("gg.essential.elementa", "dev.isxander.lib.elementa")
-        relocate("gg.essential.universalcraft", "dev.isxander.lib.universalcraft")
+        relocate("gg.essential.universal", "dev.isxander.lib.universalcraft")
     }
 
     remapJar {

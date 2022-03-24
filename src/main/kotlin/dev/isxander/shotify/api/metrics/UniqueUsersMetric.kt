@@ -13,7 +13,7 @@ import java.net.http.HttpResponse.BodyHandlers
 
 object UniqueUsersMetric {
     fun url(uuid: String) =
-        URI("https://api.isxander.dev/metric/put/shotify?type=unique_users&uuid=$uuid")
+        URI("https://api.isxander.dev/metric/put/shotify?type=users&uuid=$uuid")
 
     fun putApi() {
         if ((client as AccessorMinecraftClient).userApiService == UserApiService.OFFLINE) {

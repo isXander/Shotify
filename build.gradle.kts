@@ -55,7 +55,7 @@ dependencies {
 
     include(implementation("org.bundleproject:libversion:0.0.+")!!)
 
-    modImplementation("com.terraformersmc:modmenu:3.+")
+    modImplementation("com.terraformersmc:modmenu:4.+")
 }
 
 kotlin {

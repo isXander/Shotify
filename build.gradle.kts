@@ -8,7 +8,7 @@ plugins {
     id("fabric-loom") version "0.11.+"
     id("io.github.juuxel.loom-quiltflower") version "1.+"
 
-    id("com.github.johnrengelman.shadow") version "7.+"
+    id("com.github.johnrengelman.shadow") version "8.+"
 }
 
 group = "dev.isxander"
